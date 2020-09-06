@@ -2,10 +2,10 @@
 
 :root {
   --primaryColor: #f09d51;
-  --mainWhite: #fff;
+  --mainWhite: rgba(25, 55, 221, 0.537);
   --mainBlack: #222;
-  --mainGrey: #ececec;
-  --mainSpacing: 0.1rem;
+  --mainGrey: #cbcb91;
+  --mainSpacing: 0.3rem;
   --mainTransition: all 0.3s linear;
 }
 * {
@@ -14,7 +14,101 @@
   box-sizing: border-box;
 }
 body {
-  color: var(--mainBlack);
-  background: var(--mainWhite);
+  
+  background-image: url("./images/backgroungimg.jpg");
+  background-color:#cbcb91 ;
   font-family: "Lato", sans-serif;
+   
+
+}
+ul{
+  float: left;
+  list-style-type: none;
+}
+ul li {
+  display: inline-block;
+}
+  
+ul li a {
+  text-decoration: none;
+  color: grey;
+  padding: 5px 20px;
+  border: 1px solid #fff;
+  transition: 0.6s ease;
+
+}
+ul li a:hover{
+  background-color:orange;
+  color: #000;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgb(231, 252, 157);
+  z-index: 1;
+}
+.navbar-center {
+  text-align: center;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.nav-icon {
+  font-size: 1rem;
+}
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.cart-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primaryColor);
+  padding: 2 5px;
+  border-radius: 50%;
+  color: var(--mainWhite);
+}
+hero {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner {
+  text-align: center;
+  background: lightgrey;
+  display: inline-block;
+  padding: 3rem;
+}
+.banner-title {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 3rem;
+  background: transparent;
+
+}
+.banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: lightcoral;
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+.banner-btn:hover {
+  background: transparent;
+  color: var(--primaryColor);
 }
