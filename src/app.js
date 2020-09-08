@@ -37,6 +37,8 @@ const productDOM = document.querySelector('.products-center');
 
 //create variable to represent the cart
 let cart = [];  //empty array that will contain the items the user will add
+let buttonsDOM = [];
+
 
 //create the class to get the products (from rails backend)
 class Products {
@@ -71,10 +73,10 @@ class UI {
             <article class="product">
                 <div class="img-container">
                     <img src=${product.image} 
-                    alt="iphone" 
+                    alt="" 
                     class="product-img">
                     <button class="bag-btn" data-id=${product.id}>
-                        <i class="fas fa shopping-cart"></i>
+                        <i class="fas fa-shopping-cart"></i>
                         Add to Cart
                     </button>
                 </div>
@@ -86,11 +88,48 @@ class UI {
         });
         productDOM.innerHTML = result;
     }
+    getBagButtons(){
+        const buttons = [...document.querySelectorAll('.bag-btn')];
+        buttonsDOM = buttons;
+
+        buttons.forEach(button => {
+            let id = button.dataset.id;
+            let inCart = cart.find(item => item.id === id);
+            if (inCart){
+                button.innerText = "In Cart";
+                button.disable = true;
+            } 
+            
+            button.addEventListener('click', e => {
+                e.target.innerText = "In Cart";
+                e.target.disabled = true;
+
+                //get the product from the local storage by ID
+                let cartItem = Storage.getProduct(id);
+                console.log(cartItem)
+                // add the product to the cart
+                // save the cart into the local storage 
+                //set cart values
+                // display the cart item within the cart
+                //show the cart when user adds an item into the cart
+
+            })
+            
+        })
+    }
 }
 
 //local storage class
 class Storage {
+    static saveProducts(products) {
+        localStorage.setItem("products", JSON.stringify(products));
+    }
 
+    static getProduct(id){
+        let products = JSON.parse(localStorage.getItem('products'));
+        return products.find(product => product.id.toString() === id.toString())
+        
+    }
 }
 
 document.addEventListener('DOMContentLoaded', e => {
@@ -98,5 +137,11 @@ document.addEventListener('DOMContentLoaded', e => {
     const products = new Products();
 
     //use the class method to get the products
-    products.getProducts().then(products => ui.displayProducts(products));
+    products.getProducts().then(products => {
+        ui.displayProducts(products)
+        Storage.saveProducts(products)}
+    ).then(()=> {
+        ui.getBagButtons();
+    });
+
 })
