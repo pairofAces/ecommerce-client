@@ -105,17 +105,58 @@ class UI {
                 e.target.disabled = true;
 
                 //get the product from the local storage by ID
-                let cartItem = Storage.getProduct(id);
-                console.log(cartItem)
+                let cartItem = {...Storage.getProduct(id), amount:1};
+                
                 // add the product to the cart
+                cart = [...cart, cartItem]
+                
                 // save the cart into the local storage 
-                //set cart values
-                // display the cart item within the cart
-                //show the cart when user adds an item into the cart
+                Storage.saveCart(cart) 
 
+                //set cart values
+                this.setCartValues(cart)
+
+                // display the cart item within the cart
+                this.addCartItem(cartItem)
+
+                //show the cart when user adds an item into the cart
+                this.showCart();
             })
             
         })
+    }
+    setCartValues(cart) {
+        let tempTotal = 0;
+        let itemsTotal = 0;
+        cart.map(item => {
+            tempTotal += item.price * item.amount;
+            itemsTotal += item.amount
+        })
+        cartTotal.innerText = parseFloat(tempTotal.toFixed(2))
+        cartItems.innerText = itemsTotal;
+    }
+    addCartItem(item){
+        const div = document.createElement('div')
+        div.classList.add('cart-item');
+        div.innerHTML = `
+        <img src=${item.image} alt="product">
+            <div>
+                <h4>${item.name}</h4>
+                <h5>$${item.price}</h5>
+                <span class="remove-item" data-id=${item.id}>Remove</span>
+            </div>
+            <div>
+                <i class="fas fa-chevron-up" data-id=${item.id}></i>
+                <p class="item-amount">${item.amount}</p>
+                <i class="fas fa-chevron-down" data-id=${item.id}></i>
+            </div>
+        `
+        cartContent.appendChild(div)
+        
+    }
+    showCart() {
+        cartOverlay.classList.add('transparentBcg');
+        cartDOM.classList.add('showCart');
     }
 }
 
@@ -129,6 +170,10 @@ class Storage {
         let products = JSON.parse(localStorage.getItem('products'));
         return products.find(product => product.id.toString() === id.toString())
         
+    }
+
+    static saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart))
     }
 }
 
