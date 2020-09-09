@@ -181,6 +181,15 @@ class UI {
         clearCartBtn.addEventListener('click', () => {
             this.clearCart();
         });
+
+        cartContent.addEventListener('click', e => {
+            if (e.target.classList.contains('remove-item')) {
+                let removeItem = e.target;
+                let id = parseInt(removeItem.dataset.id, 10);
+                cartContent.removeChild(removeItem.parentElement.parentElement);
+                this.removeItem(id);
+            }
+        })
     }
 
     clearCart() {
@@ -208,6 +217,7 @@ class UI {
 
     getButton(id) {
         return buttonsDOM.find(button => button.dataset.id.toString() === id.toString());
+
     }
 
 
