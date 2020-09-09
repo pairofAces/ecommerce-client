@@ -88,8 +88,9 @@ class UI {
         });
         productDOM.innerHTML = result;
     }
+    
     getBagButtons(){
-        const buttons = [...document.querySelectorAll('.bag-btn')];
+        const buttons = [...document.querySelectorAll(".bag-btn")];
         buttonsDOM = buttons;
 
         buttons.forEach(button => {
@@ -177,7 +178,7 @@ class UI {
     }
 
     cartLogic() {
-        clearCartBtn.addEventListener('click', e => {
+        clearCartBtn.addEventListener('click', () => {
             this.clearCart();
         });
     }
@@ -194,19 +195,19 @@ class UI {
     }
 
     removeItem(id) {
-        cart = cart.filter(item => item.id !== id);
+        cart = cart.filter(item => item.id !==id);
         this.setCartValues(cart);
         Storage.saveCart(cart);
-        let button = this.getSingleButton(id);
-        // debugger
+        let button = this.getButton(id);
+        // // debugger
         button.disabled = false;
         button.innerHTML = `
             <i class="fas fa-shopping-cart"></i>add to cart
         `;
     }
 
-    getSingleButton(id) {
-        return buttonsDOM.find(button => button.dataset.id === id);
+    getButton(id) {
+        return buttonsDOM.find(button => button.dataset.id.toString() === id.toString());
     }
 
 
