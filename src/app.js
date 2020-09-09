@@ -197,7 +197,7 @@ class UI {
         cart = cart.filter(item => item.id !== id);
         this.setCartValues(cart);
         Storage.saveCart(cart);
-        const button = this.getSingleButton(id);
+        let button = this.getSingleButton(id);
         // debugger
         button.disabled = false;
         button.innerHTML = `
@@ -206,7 +206,7 @@ class UI {
     }
 
     getSingleButton(id) {
-        return buttonsDOM.find(btn => btn.dataset.id === id);
+        return buttonsDOM.find(button => button.dataset.id === id);
     }
 
 
