@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
 :root {
-  --primaryColor: #f09d51;
+  --primaryColor: #2193a7;
   --mainWhite: #fff;
   --mainBlack: #222;
   --mainGrey: #ececec;
@@ -58,7 +58,7 @@ body {
 /* --------------- Hero ---------------- */
 .hero {
   min-height: calc(100vh - 60px);
-  background: url("https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80") center/cover no-repeat;
+  background: url("https://i.pinimg.com/originals/37/f7/72/37f772fa536d6a4c8d55b3b7dab91f25.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
