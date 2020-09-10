@@ -188,6 +188,14 @@ class UI {
                 let id = parseInt(removeItem.dataset.id, 10);
                 cartContent.removeChild(removeItem.parentElement.parentElement);
                 this.removeItem(id);
+            } else if (e.target.classList.contains('fa-chevron-up')) {
+                let addAmount = e.target;
+                let id = parseInt(addAmount.dataset.id, 10);
+                let tempItem = cart.find(item => item.id === id);
+                tempItem.amount = tempItem.amount + 1;
+                Storage.saveCart(cart)
+                this.setCartValues(cart);
+                addAmount.nextElementSibling.innerText = tempItem.amount;
             }
         })
     }
