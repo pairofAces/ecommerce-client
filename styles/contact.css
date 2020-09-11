@@ -1,0 +1,5 @@
+body {
+  color: var(--mainBlack);
+  background: orange;
+  font-family: "Lato", sans-serif;
+}

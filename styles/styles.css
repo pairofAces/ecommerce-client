@@ -18,6 +18,27 @@ body {
   background: var(--mainWhite);
   font-family: "Lato", sans-serif;
 }
+
+ul{
+  float: left;
+  list-style-type: none;
+}
+ul li {
+  display: inline-block;
+}
+
+ul li a {
+  text-decoration: none;
+  color: grey;
+  padding: 5px 20px;
+  border: 1px solid #fff;
+  transition: 0.6s ease;
+
+}
+ul li a:hover{
+  background-color:#2193a7;
+  color: #000;
+}
 /* --------------- Navbar ---------------- */
 .navbar {
   position: sticky;
