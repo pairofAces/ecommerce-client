@@ -6,12 +6,74 @@
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
 }
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: "Lato", sans-serif;
 }
 
+ul {
+  float: left;
+  list-style-type: none;
+}
+ul li {
+  display: inline-block;
+  align-items: center;
+}
+
+ul li a {
+  text-decoration: none;
+  color: grey;
+  padding: 5px 20px;
+  border: 1px solid #fff;
+  transition: 0.6s ease;
+}
+ul li a:hover {
+  background-color: #2193a7;
+  color: #000;
+}
+/* --------------- Navbar ---------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgb(231, 226, 221);
+  z-index: 1;
+}
+.navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+.nav-icon {
+  font-size: 1.5rem;
+}
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.cart-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primaryColor);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+}
+/* --------------- End of Navbar ---------------- */
 html {
   box-sizing: border-box;
 }

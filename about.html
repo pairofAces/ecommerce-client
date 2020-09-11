@@ -1,41 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- navbar -->
+  <nav class="navbar">
+    <div class="navbar-center">
+      <span class="nav-icon">
+        <ul>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </span>
+      <img src="image/project-logo.png" alt="e-commerce-logo" />
+      <div class="cart-btn">
+        <span class="nav-icon">
+          <i class="fas fa-cart-plus"></i>
+        </span>
+        <div class="cart-items">0</div>
+      </div>
+    </div>
+  </nav>
+  <!-- End of navbar -->
   <head>
     <h1 style="text-align: center">About Us</h1>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
     <link rel="stylesheet" href="styles/about.css" />
+    <script
+      src="https://kit.fontawesome.com/2001a2a6f7.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
-  <body></body>
+  <body>
+    <h2 style="text-align: center">Our Team</h2>
 
-  <h2 style="text-align: center">Our Team</h2>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <img src="/w3images/team1.jpg" alt="Jane" style="width: 100%" />
-        <div class="container">
-          <h2>Jane Doe</h2>
-          <p class="title">CEO & Founder</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>jane@example.com</p>
-          <p><button class="button">Contact</button></p>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="/w3images/team1.jpg" alt="Jane" style="width: 100%" />
+          <div class="container">
+            <h2>Minelie Goma</h2>
+            <p class="title">Designer</p>
+            <p>
+              Mod 3 Flatiron student, working with the CEO to create an
+              E-commerce website
+            </p>
+
+            <p>mgoma@flatironschool.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="/w3images/team3.jpg" alt="John" style="width: 100%" />
+          <div class="container">
+            <h2>Karan S. Chauhan</h2>
+            <p class="title">CEO</p>
+            <p>
+              Mod 3 Flatiron student, working with the Designer to create an
+              E-commerce website
+            </p>
+            <p>kchauhan@flatironschool.com</p>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="column">
-      <div class="card">
-        <img src="/w3images/team3.jpg" alt="John" style="width: 100%" />
-        <div class="container">
-          <h2>John Doe</h2>
-          <p class="title">Designer</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>john@example.com</p>
-          <p><button class="button">Contact</button></p>
+    <h2 style="text-align: center">Purpose</h2>
+    <div class="row">
+      <div style="text-align: center" class="column">
+        <div class="card">
+          <div class="container">
+            <p>
+              We enjoy coding, and wanted to create a simple e-commerce website
+              to test our programming skills.For our Mod 3 project, we decided
+              to use products from Ebay's Browse API. We hope you enjoyed our
+              project demo. At Electic Commerce we work hard every day to enrich
+              the lives of consumers through electronics and accessories.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <form style="text-align: center" action="index.html">
+      <input type="submit" value="Home Page" />
+    </form>
+  </body>
 </html>
