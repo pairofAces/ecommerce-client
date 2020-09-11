@@ -112,6 +112,7 @@ ul li a:hover {
   color: var(--primaryColor);
 }
 /* --------------- End of Hero ---------------- */
+
 html {
   box-sizing: border-box;
 }
@@ -173,11 +174,7 @@ html {
   background-color: #555;
 }
 
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
+ 
+
 
 
