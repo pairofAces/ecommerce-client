@@ -23,7 +23,7 @@ ul {
 }
 ul li {
   display: inline-block;
-  align-items: center;
+  align-items: left;
 }
 
 ul li a {
@@ -38,9 +38,7 @@ ul li a:hover {
   color: #000;
 }
 
-.contact-about{
-     float: right;
-}
+
 /* --------------- Navbar ---------------- */
 .navbar {
   position: sticky;
