@@ -51,6 +51,16 @@ ul li a:hover{
   z-index: 1;
 }
 
+.navbar-left {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
 .navbar-center {
   width: 100%;
   max-width: 1170px;
@@ -60,6 +70,7 @@ ul li a:hover{
   justify-content: space-between;
   padding: 0 1.5rem;
 }
+
 .nav-icon {
   font-size: 1.5rem;
 }
