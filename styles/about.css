@@ -37,6 +37,10 @@ ul li a:hover {
   background-color: #2193a7;
   color: #000;
 }
+
+.contact-about{
+     float: right;
+}
 /* --------------- Navbar ---------------- */
 .navbar {
   position: sticky;
