@@ -141,3 +141,7 @@ html {
     display: block;
   }
 }
+
+form {
+  margin-bottom: 50px;
+}
