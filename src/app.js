@@ -1,28 +1,6 @@
-// document.addEventListener("DOMContentLoaded", e => {
-//   ------------------------------------------------------  
-    //comment this section out if necessary... coded along Ian's project setup tutorial
-
-//     //runtime stuff will go here
-//     baseUrl = "http://localhost:3000/"
-
-//     //we will have a 'const' variable relating to the 'fetchAdapter' and assign it to a 
-//     // new instance of the fetchAdapter class, taking in the paramter of our base url
-//     // example:
-
-//     const ecommerceFetchAdapter = new FetchAdapter(baseUrl)
-
-//     //this is an example of a callback
-//     let action = users => users.forEach(console.log)
-
-//     //I want to fetch all users and log their names
-//    ecommerceFetchAdapter.get("users", action)
-// })
-//   ------------------------------------------------------
-
 baseUrl = "http://localhost:3000/"
 const ecommerceFetchAdapter = new FetchAdapter(baseUrl)
 let action = products => products.forEach(console.log)
-// ecommerceFetchAdapter.get("products", action)
 
 //create global variables for the classes on the ecommerce webpage
 const cartBtn = document.querySelector('.cart-btn');
@@ -46,7 +24,6 @@ class Products {
         try {
             let result = await fetch("http://localhost:3000/products/");
             let data = await result.json();
-            // return data;
             let products = data;
             products = products.map(item => {
                 const name = item.name;
