@@ -22,7 +22,6 @@ let buttonsDOM = [];
 class Products {
     async getProducts() {
         try {
-            // let result = await fetch("http://localhost:3000/products/");
             let result = await fetch("https://electric-commerce.herokuapp.com/");
             let data = await result.json();
             let products = data;
