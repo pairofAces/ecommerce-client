@@ -1,5 +1,5 @@
 <h1>Electric-Commerce</h1>
-A web application engineered as a Netflix clone. 
+A web application engineered as an ecommerce website for electronics.
 
 # Demo
 ![Electric-Commerce-Demo](https://media.giphy.com/media/CFFYSstj9rbcPWeUYW/giphy.gif)
